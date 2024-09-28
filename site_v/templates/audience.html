@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% block content %}
+        <div class="container mt-20">
+            <h1 class="text-center text-5xl wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">TANGANYIKA GURU <br><span style="margin-top: 10px;" class="font-medium">All Time With You</span></h1>
+            <nav class="items-center content-center justify-between grid-cols-1" style="margin-left: 670px;margin-top: 60px;">
+                 <!--<a href="#" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-8 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Faire ta Demande</a>-->
+            </nav>
+          </div>
+<div class="container">
+  <h3 class="mb-2 text-uppercase text-center text-5xl">Formulaire de Demande</h3>
+  <hr class="mb-5">
+  <form class="row g-3" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if error %}
+        <ul class="messages text-center pb-2" style="color: red;">
+            {% for errors in error %}
+                <li{% if errors.tags %} class="{{ errors.tags }}"{% endif %}><i class="fas fa-check-circle"></i> {{ errors }} <i>&#127881</i></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Nom</label>
+    <input type="text" class="form-control" name="nom" required>
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Prenom</label>
+    <input type="text" class="form-control" name="prenom" required>
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" required>
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Telephone</label>
+    <input type="text" class="form-control" name="telephone" required>
+  </div>
+   
+  <div class="col-12">
+    <button type="submit"  class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-8">Envoyer</button>
+  </div>
+</form>
+</div>
+{% endblock content %}

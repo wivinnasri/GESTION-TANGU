@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    
+    
+    <div class="details" style="width: 130vw">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Informations Personnel</h2>
+          <a href="{% url 'clients' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+  
+        <div class="card mb-3" style="max-width: 100%;color: black;">
+            <div class="row g-3 mb-3">
+              <div class="col-md-3">
+                <img src="{{ admin_i.photo_profil.url }}" class="card-img" alt="...">
+                <h1 class="card-title text-center text-muted" style="font-size: 25px;"></h1>
+              </div>
+              <div class="col-md-8 mt-20">
+                <div class="row g-3">
+                   {% comment %} {% if admin_i.nom == 'none' %}{% endcomment %}
+                  <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label"> Nom & Prenom:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.nom }}" style="border: none;" placeholder="ex.Izere" required>
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.prenom }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+              {% comment %} {% else %}{% endcomment %}
+              <div class="col-md-3">
+                <label for="validationDefault01" class="form-label"> Nom d'un Entreprise:</label>
+                <div style="display: flex;width: 250px;">
+                <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.nom_entreprise }}" style="border: none;" placeholder="ex.Izere" required>
+              </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationDefault01" class="form-label"> Code NIF:</label>
+                <div style="display: flex;width: 190px;">
+                <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.code_NIF }}" style="border: none;" placeholder="ex.Izere" required>
+              </div>
+            </div>
+            {% comment %} {% endif %}{% endcomment %}
+                   <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Email:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.email }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+                </div>
+                 <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Telephone:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.telephone }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label"> Quartier:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.quartier }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Ville:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.ville }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Pays:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.pays }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label"> CNI:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.CNI }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+              </div>
+               <div class="col-md-3 mt-4">
+                  <label for="validationDefault01" class="form-label"> Piece d'identite:</label>
+                  <div style="display: flex;width: 250px;">
+                  <p class="card-text"><small><a style="font-size: 15px;" href="{{ admin_i.piece_identite.url }}"><i class="fas fa-file-pdf"></i>Voir la Piece d'identite</a></small></p>
+                </div>
+              </div>
+              <div class="col-md-4 mt-4">
+                <label for="validationDefault01" class="form-label"> Date d'ajouter:</label>
+                <div style="display: flex;width: 250px;">
+                <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin_i.date_add }}" style="border: none;" placeholder="ex.Izere" required>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <hr style="color: black;margin-bottom: 10px;">
+      </div>
+    </div>
+    
+  </div>
+  {% endblock content %}

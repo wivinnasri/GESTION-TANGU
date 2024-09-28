@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/tangu.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wstream.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <title>TANGU | AUTHENTIFICATION</title>
+</head>
+<body class="bg-gray-800 text-white">
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+
+                {% if messages %}
+                <ul class="messages text-center pb-2">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} <i>&#127881</i></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+                <form action="{% url 'login' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <h2 style="cursor: pointer;" class="text-center justify-center text-white hover:bg-red d-flex items-center">
+                        <img src="../static/img/tangu.png" alt="" style="width: 50px;" class="rounded-pill">
+                        TANGU
+                    </h2>
+                    <div class="inputbox" style="margin-left: 40px;">
+                        
+                        <input type="text" name="email" id="email" required>
+                        <label for="email">Username</label>
+                    </div>
+                    <div class="inputbox" style="margin-left: 40px;">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">Mot de Passe</label>
+                    </div>
+                    <button type="submit" style="background-color: gray;">Se Connecter</button>
+                    <div class="forget">
+                        <a href="#" class="text-center">
+                            <p>Mot de passe oublié?</p>
+                        </a>
+                    </div>
+                    <!--<div class="register">
+                        <a href="" class="text-center">
+                            <p>New to W-stream? Sign up now.</p>
+                        </a>
+                    </div>
+                -->
+                </form>
+            
+        </div>
+    </section>
+</body>
+</html>

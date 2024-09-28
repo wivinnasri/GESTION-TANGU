@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="containerd">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Formations</h2>
+           <a href="{% url 'formations' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+          <div class="search">
+            <form action="" class="d-flex flex-row">
+            <label>
+                <input type="text" name="item_name" placeholder="Rechercher Ici" style="color: #000;">
+                <button type="submit">
+                    <i class="fas fa-search" style="color: black;"></i>
+                </button>
+            </label>
+        </form>
+        </div>
+          <a href="{% url 'formationsadd' %}" class="btn">Ajouter un formation <i class="fas fa-plus"></i></a>
+        </div>
+        {% if messages %}
+        <ul class="messages text-center pb-2" style="color: #198754;">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-check-circle"></i> {{ message }} <i>&#127881</i></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+        <table style="width: 85vw;" class="table table-bordered">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td class="text-center">Formation</td>
+              <td>Description</td>
+              <td>Centre de Formation</td>
+              <td>Domaine</td>
+              <td>Date de Début</td>
+              <td>Date de Fin</td>
+              <td>Payer</td>
+              <td class="text-center">Action</td>
+              
+            </tr>
+          </thead>
+          {% if formation %}
+
+           {% for formations in formation %}
+          
+          <tbody>
+            <tr>
+              <td>{{formations.id}}</td>
+              <td class="text-center">{{formations.nom_formation}}</td>
+              <td>{{formations.description}}</td>
+              <td>{{formations.centre}}</td>
+              <td>{{formations.domaine}}</td>
+              <td>{{formations.date_debut}}</td>
+              <td>{{formations.date_fin}}</td>
+              <td>{{formations.payer}}</td>
+              <td style="display: flex;gap:0.5rem;">
+                <!--<a href="#" class="btn btn-success d-flex items-center" style="gap:0.2rem;"><i class="far fa-eye" style="color: white;"></i> Visualiser</a>-->
+                <a href="{% url 'formate' formations.id %}" class="btn btn-warning d-flex items-center" style="gap:0.2rem;"><i class="far fa-edit" style="color: black;"></i> Editer</a>
+                <a href="{% url 'formade' formations.id %}" class="btn btn-danger d-flex items-center" style="gap:0.2rem;"><i class="fas fa-trash-alt" style="color: white;"></i> Rétirer</a>
+              </td>
+            
+            </tr>
+                     {% endfor %}
+
+         {% else %}
+              <tr><td class="text-center" colspan="7"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-thermometer-empty"></i> Pas des enregistrements</p><td></tr>
+          {% endif %}
+          </tbody>
+         
+        </table>
+        <hr style="color: black;margin-bottom: 10px;">
+        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if formation.has_previous %}
+              <li class="page-item">
+                
+                <a class="page-link" href="?page={{formation.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                
+              </li>
+              {% endif %}
+              <li class="page-item active"><a class="page-link" href="?page={{formation.number}}">{{admin_i.number}}</a></li>
+              {% if formation.has_next %}
+              <li class="page-item">
+                
+                <a class="page-link"href="?page={{formation.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+               
+              </li>
+               {% endif %}
+            </ul>
+          </nav>
+          <nav style="top: 0;right: 1;">
+            <a href="{% url 'index' %}" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-arrow-left"></i> Retour a la page d'accueil</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

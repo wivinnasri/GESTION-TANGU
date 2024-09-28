@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    
+    
+    <div class="details" style="width: 130vw">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Informations Personnel</h2>
+          <a href="{% url 'comptes' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+  
+        <div class="card mb-3" style="max-width: 100%;color: black;">
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <img src="{{ admin.photo_profil.url }}" class="card-img" alt="...">
+                <h1 class="card-title text-center text-muted" style="font-size: 25px;">{{ admin.user.username }}</h1>
+              </div>
+              <div class="col-md-8">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label"> Nom & Prenom:</label>
+                  <div style="display: flex;width: 220px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.user.first_name }}" style="border: none;" placeholder="ex.Izere" required>
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.user.last_name }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+                   <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Email:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.user.email }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+                </div>
+                 <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Telephone:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.telephone }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label"> Quartier:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.quartier }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Ville:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.ville }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Pays:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.pays }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label"> CNI:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.CNI }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Passport:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.passport }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Matricule:</label>
+                  <div style="display: flex;width: 250px;">
+                  <input type="text" disabled class="form-control" id="validationDefault01" name="nom" value="{{ admin.matricule }}" style="border: none;" placeholder="ex.Izere" required>
+                </div>
+              </div>
+               <div class="col-md-3">
+                  <label for="validationDefault01" class="form-label"> Piece d'identite:</label>
+                  <div style="display: flex;width: 250px;">
+                  <p class="card-text"><small><a style="font-size: 15px;" href="{{ admin.piece_identite.url }}"><i class="fas fa-file-pdf"></i>Voir la Piece d'identite</a></small></p>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <hr style="color: black;margin-bottom: 10px;">
+      </div>
+    </div>
+    
+  </div>
+  {% endblock content %}

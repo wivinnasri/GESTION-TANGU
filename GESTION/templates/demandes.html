@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1 style="text-transform: uppercase;">Demandes</h1>
+</div>
+<div class="cardBox">
+    <a href="{% url 'demandest' %}">
+  <div class="card d-flex flex-row">
+    <div>
+      <div class="numbers">{{dsta}}</div>
+      <div class="cardName">Demandes des Formations</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-newspaper"></i>
+    </div>
+  </div>
+  </a>
+  <a href="{% url 'demandecl' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(191, 221, 221);">
+    <div>
+      <div class="numbers">{{client}}</div>
+      <div class="cardName">Demandes des Rendez-vous</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-newspaper"></i>
+    </div>
+  </div>
+  </a>
+  <a href="{% url 'demandesa' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(75, 81, 81);">
+    <div>
+      <div class="numbers">{{doce}}</div>
+      <div class="cardName">Demandes des Stages</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-paperclip"></i>
+    </div>
+  </div>
+  </a>
+<!--<a href="#">
+  <div class="card d-flex flex-row" style="background-color: aqua;">
+    <div>
+      <div class="numbers">10</div>
+      <div class="cardName">Ingénieurs en Réseaux</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-rss"></i>
+    </div>
+
+  </div>
+</a>
+-->
+</div>
+<div class="container">
+  <!-- ================ Order Details List ================= -->
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>Les Demandes des formations</h2>
+        <a href="{% url 'demandest' %}" class="btn">Voir Plus</a>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>Nom & Prenom</td>
+            <td class="text-center">Telephone</td>
+            <td>Formation</td>
+            <td class="text-center">Email</td>
+          </tr>
+        </thead>
+           {% if demandes %}
+
+           {% for demandes in demandes %}
+          
+        <tbody>
+          <tr>
+            <td>{{demandes.nom}} {{demandes.prenom}}</td>
+            <td class="text-center">{{demandes.telephone}}</td>
+            <td>{{demandes.id_formation}}</td>
+            <td class="text-start">{{demandes.email}}</td>
+          </tr>
+                         {% endfor %}
+
+         {% else %}
+              <tr><td class="text-center" colspan="7"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-thermometer-empty"></i> Pas des enregistrements</p><td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+      <hr style="color: black;margin-bottom: 10px;">
+      <nav style="top: 0;right: 1;">
+            <a href="{% url 'index' %}" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-arrow-left"></i> Retour a la page d'accueil</a>
+          </nav>
+    </div>
+  </div>
+</div>
+
+
+  {% endblock content %}

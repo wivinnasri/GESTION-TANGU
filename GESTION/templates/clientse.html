@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Employes</h2>
+                 
+          <a href="{% url 'clients' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+        {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+      {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="row g-3" method="post" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Nom</label>
+                  <input type="text" class="form-control" name="nom" value="{{admin_i.nom}}" id="validationDefault01" placeholder="ex.Izere" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationDefault02" class="form-label">Prenom</label>
+                  <input type="text" class="form-control" name="prenom" value="{{admin_i.prenom}}" id="validationDefault02" placeholder="ex.Mark" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Nom d'entreprise</label>
+                    <input type="text" class="form-control" name="nom_entreprise" value="{{admin_i.nom_entreprise}}" id="validationDefault02" placeholder="ex.Mark" required>
+                  </div>
+                <div class="col-md-3">
+                  <label for="validationDefaultUsername" class="form-label">Email</label>
+                  <div class="input-group">
+                    <input type="email" class="form-control" name="email" value="{{admin_i.email}}" id="validationDefaultUsername" placeholder="ex.izeremark@guruacademy.xyz"  aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationDefault03" class="form-label">Telephone</label>
+                  <input type="text" class="form-control" name="telephone" value="{{admin_i.telephone}}" id="validationDefault03" placeholder="ex.68989887" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Quartier</label>
+                    <input type="text" class="form-control" name="quartier" value="{{admin_i.quartier}}" id="validationDefault05" placeholder="ex.Kigobe" required>
+                  </div>
+                <div class="col-md-3">
+                  <label for="validationDefault05" class="form-label">Ville</label>
+                  <input type="text" class="form-control" name="ville" value="{{admin_i.ville}}" id="validationDefault05" placeholder="ex.Bujumbura" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Pays</label>
+                    <input type="text" class="form-control" name="pays" value="{{admin_i.pays}}" id="validationDefault05" placeholder="ex.Burundi" required>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">CNI</label>
+                    <input type="text" class="form-control" name="cni" value="{{admin_i.CNI}}" id="validationDefault05" placeholder="ex.531.018.03/2020" required>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Code NIF</label>
+                    <input type="text" class="form-control" name="code_nif" value="{{admin_i.code_NIF}}" id="validationDefault05" placeholder="ex.OP90BI87">
+                  </div>
+                  <!--<div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Matricule</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="ex.Mark" required>
+                  </div>-->
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Photo</label>
+                    {% comment %}{% if admin_i.photo_profil %}
+                    <img src="{{ admin_i.photo_profil.url }}" alt="Photo de profil" class="img-thumbnail">
+                {% endif %}{% endcomment %}
+                    <input type="file" class="form-control" name="photo" value="{{admin_i.photo_profil.url}}" id="validationDefault05">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Piece d'identite</label>
+                    <input type="hidden" class="form-control" name="piece1" value="{{admin_i.photo_profil.url}}" id="validationDefault05">
+                    <input type="file" class="form-control" name="piece" value="{{admin_i.photo_profil.url}}" id="validationDefault05">
+                  </div> 
+                  
+                  <div class="col-md-3">
+                    <input type="hidden" class="form-control" name="admin_id" value="{{ admin_i.user }}" id="validationDefault05">
+                  </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-warning" style="color: white;background-color: #ffc107;" type="submit">Modifier</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function disableFields(...fieldIds) {
+      // body...
+      fieldIds.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        field.disabled = true;
+      });
+    }
+</script>
+{% endblock content %}

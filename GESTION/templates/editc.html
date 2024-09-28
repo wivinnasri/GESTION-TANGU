@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Informations Personnel</h2>
+          <a href="{% url 'comptes' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+                {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="row g-3" action="" enctype="multipart/form-data" method="POST">
+              {% csrf_token %}
+                <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="validationDefault01" name="nom" value="{{ admin.user.first_name }}" placeholder="ex.Izere" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationDefault02" class="form-label">Prenom</label>
+                  <input type="text" class="form-control" name="prenom" id="validationDefault02" value="{{ admin.user.last_name }}" placeholder="ex.Mark" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationDefaultUsername" class="form-label">Email</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="email" id="validationDefaultUsername" value="{{ admin.user.email }}" placeholder="ex.izeremark@guruacademy.xyz"  aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationDefault03" class="form-label">Telephone</label>
+                  <input type="text" class="form-control" name="telephone" id="validationDefault03" value="{{ admin.telephone }}" placeholder="ex.68989887" required>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationDefault03" class="form-label">Username</label>
+                  <input type="text" class="form-control" name="username" id="validationDefault03" value="{{ admin.user.username }}" placeholder="ex.68989887" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Quartier</label>
+                    <input type="text" class="form-control" name="quartier" id="validationDefault05" value="{{ admin.quartier }}" placeholder="ex.Kigobe" required>
+                  </div>
+                <div class="col-md-3">
+                  <label for="validationDefault05" class="form-label">Ville</label>
+                  <input type="text" class="form-control" name="ville" id="validationDefault05" value="{{ admin.ville }}" placeholder="ex.Bujumbura" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Pays</label>
+                    <input type="text" class="form-control" name="pays" id="validationDefault05" value="{{ admin.pays }}" placeholder="ex.Burundi" required>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">CNI</label>
+                    <input type="text" class="form-control" name="cni" id="validationDefault05" value="{{ admin.CNI }}" placeholder="ex.531.018.03/2020" required>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Passport</label>
+                    <input type="text" class="form-control" name="passport" id="validationDefault05" value="{{ admin.passport }}" placeholder="ex.OP90BI87" required>
+                  </div>
+                  <!--<div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Matricule</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="ex.Mark" required>
+                  </div>-->
+                  <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Photo</label>
+                    <input type="hidden" class="form-control" name="photo1" id="validationDefault05" value="{{ admin.photo_profil.url }}" readonly>
+                    <input type="file" class="form-control" name="photo" value="{{ admin.photo_profil.url }}" id="validationDefault05">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="validationDefault05" class="form-label">Piece d'identite</label>
+                    <input type="hidden" class="form-control" name="piece1" id="validationDefault05" value="{{ admin.piece_identite.url }}" readonly>
+                    <input type="file" class="form-control" name="piece" id="validationDefault05" value="{{ admin.piece_identite.url }}">
+                  </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{ admin.user.id}}" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-info" style="color: white;background-color: #0dcaf0;" type="submit">Update</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

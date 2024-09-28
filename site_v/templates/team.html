@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+{% block content %}
+          <div class="container mt-20">
+            <h1 class="text-center text-5xl wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">TANGANYIKA GURU <br><span style="margin-top: 10px;" class="font-medium">All Time With You</span></h1>
+            <nav class="items-center content-center justify-between grid-cols-1" style="margin-left: 670px;margin-top: 60px;">
+                 <a href="{% url 'service' %}" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Team</a>
+            </nav>
+             <!--<div class="container d-flex gap-4 items-center justify-between mt-20">
+               <div class=" wow fadeIn" data-wow-duration="2s" data-wow-delay="0.25s">
+                    <p class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 font-bold">Computer Network Training</p>
+               </div>
+               <div class=" wow fadeIn" data-wow-duration="2.25s" data-wow-delay="0.50s">
+                    <p class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 font-bold">Computer Network Design</p>
+               </div>
+               <div class=" wow fadeIn" data-wow-duration="2.50s" data-wow-delay="0.75s">
+                    <p class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 font-bold">Web Design</p>
+               </div>
+               <div class=" wow fadeIn" data-wow-duration="3s" data-wow-delay="1.25s">
+                    <p class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 font-bold">Mobile Application Design</p>
+               </div>
+          </div>-->
+          </div>
+<div class="grid mt-8 mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 wow bounceIn" data-wow-duration="1s" data-wow-delay="0.6s">
+    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
+            <p class="my-4">If you care for your time, I hands down would go with this."</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center ">
+            <img class="rounded-full w-9 h-9" src="../static/assets/wivin.png" alt="profile picture">
+            <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                <div>Wivin Nasri</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400 ">Developer at TANGU</div>
+            </div>
+        </figcaption>    
+    </figure>
+    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">The executive chef of TANGU</h3>
+            <p class="my-4">Ready to discuss with customers even with everyone who can associate with TANGU"</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center ">
+            <img class="rounded-full w-9 h-9" src="../static/img/tangu.png" alt="profile picture">
+            <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                <div>Archange GANZASAMBWA</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">CEO at TANGU</div>
+            </div>
+        </figcaption>    
+    </figure>
+    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
+            <p class="my-4">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center ">
+            <img class="rounded-full w-9 h-9" src="../static/assets/charroy.jpg" alt="profile picture">
+            <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                <div>Charroy Dorat</div>
+                <!--<div class="text-sm text-gray-500 dark:text-gray-400">Software Engineer at Facebook</div>-->
+                <div class="text-sm text-gray-500 dark:text-gray-400">Developer at TANGU</div>
+            </div>
+        </figcaption>    
+    </figure>
+    <!--<figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
+            <p class="my-4">You have many examples that can be used to create a fast prototype for your team."</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center ">
+            <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
+            <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                <div>Archange GANZASAMBWA</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">CEO at TANGU</div>
+            </div>
+        </figcaption>    
+    </figure>-->
+</div>
+{% endblock %}

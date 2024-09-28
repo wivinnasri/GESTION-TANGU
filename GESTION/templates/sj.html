@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Salaire</h2>
+          
+          <a href="{% url 'salaire' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+        {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="row g-3" method="post" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="col-md-12">
+                  <label for="validationDefault01" class="form-label">Nom d'un Employe</label>
+                  <p class="text-black text-lg font-bold capitalize">{{salaire.id_employe}} {{employe.prenom}}</p>
+                </div>
+                <div class="col-md-4 mt-3">
+                  <label for="validationDefault01" class="form-label">Salaire</label>
+                  <input type="number" class="form-control" name="salaire" id="validationDefault01" value="{{salaire.salaire}}" placeholder="ex.Contrat de maison Africana" required>
+                </div>
+                <div class="col-12 mt-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-warning" style="color: white;background-color: #ffc107;" type="submit">Modifier</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

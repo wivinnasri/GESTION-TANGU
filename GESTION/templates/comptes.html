@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    
+    
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Votre Compte</h2>
+        </div>
+  
+        <div class="containere"> 
+            <div class="imgBx" style="margin-top: 50px;margin-left: 110px;margin-right: 90px;">
+                      <img style="border-radius: 48%;" src="{{admin.photo_profil.url}}" alt="" width="150px" height="150px">
+                    </div>
+                    <div class="profile-name">{{ admin.user.username }}</div>        
+            <p class="about">{{ admin.user.email }}<br>{{ admin.telephone }}</p>
+           {% comment %} 
+           <p class="about">{{ admin.telephone }}<br>{{ admin.matricule }}</p>
+           {% endcomment %}
+           <a href="{% url 'visualiserc' admin.user.id %}" class="">
+            <button class="msg-btn">Visualiser</button>
+          </a>
+          <a href="{% url 'editerc' admin.user.id %}">
+            <button class="follow-btn">Editer</button>
+          </a>
+          </div>
+        <hr style="color: black;margin-bottom: 10px;">
+      </div>
+    </div>
+    
+  </div>
+  {% endblock content %}

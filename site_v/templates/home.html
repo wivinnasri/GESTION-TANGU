@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/tangu.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flowbite.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animated.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fontawesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-space-dynamic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <title>TANGU | TANGANYIKA GURU</title>
+</head>
+<body>
+    {% include 'navbare.html' %}
+    <br>
+    <div class="mt-40"></div>
+    {% block content %}
+    
+    {% endblock content %}
+    {% include 'footere.html' %}
+    <script src="{% static 'js/ionicons.js' %}"></script>
+    <script src="{% static 'js/flowbite.min.js' %}"></script>
+    <script src="{% static 'js/icons.js' %}"></script>
+    <script src="{% static 'js/animation.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/templatemo-custom.js' %}"></script>
+</body>
+</html>

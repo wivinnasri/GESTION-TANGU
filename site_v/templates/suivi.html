@@ -1,0 +1,187 @@
+{% extends 'home.html' %}
+{% block content %}
+        <div class="container mt-20">
+            <h1 class="text-center text-5xl wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">TANGANYIKA GURU <br><span style="margin-top: 10px;" class="font-medium">All Time With You</span></h1>
+            <nav class="items-center content-center justify-between grid-cols-1" style="margin-left: 670px;margin-top: 60px;">
+                 <!--<a href="#" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-8 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Faire ta Demande</a>-->
+            </nav>
+          </div>
+           <div id="portfolio" class="our-portfolio section" style="margin-bottom: 35px;">
+    <div class="container">
+      <h1 class="text-center font-semibold uppercase mb-2 text-3xl font-bold text-gray-900 dark:text-white wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">Demande</h1>
+<div class="relative overflow-x-auto mt-8">
+    {% if message %}
+    <p>{{ message }}</p>
+{% else %}
+        {% if demande %}
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 wow slideInRight" data-wow-duration="1s" data-wow-delay="0.25s">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Nom
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Prenom
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Telephone
+                </th>
+              
+                <th scope="col" class="px-6 py-3">
+                    Formation
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Reponse
+                </th>
+                <td class="px-6 py-4 font-medium">
+                    Date de demande
+                </td>
+                {% if demande.validation == 'Accepte' %}
+                <td class="px-6 py-4 font-medium">
+                    Date de confirmation
+                </td>
+                {% endif %}
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{demande.nom}}
+                </th>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.prenom}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.email}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.telephone}}
+                </td>
+               
+                <td class="px-6 py-4 font-medium">
+                    {{demande.id_formation}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.message}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.date_add}}
+                </td>
+                {% if demande.validation == 'Accepte' %}
+                <td class="px-6 py-4 font-medium">
+                    {{demande.date_confirmation}}
+                </td>
+                {% endif %}
+                <td class="px-6 py-4 font-medium">
+                    {% if demande.validation == 'En attente' %}
+              
+                <span class="">Votre Demande est en attente..</span>
+              
+              {% elif demande.validation == 'Accepte' %}
+                   <p class="text-center" style="color: green;font-size: 15px;"><i class="fas fa-check-circle"></i> Accepte</p><td>
+              {% elif demande.validation == 'Refuse' %}
+              <p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-times-circle"></i> Refuse</p>
+              {% endif %}
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    
+    {% elif demande %}
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 wow slideInRight" data-wow-duration="1s" data-wow-delay="0.25s">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Nom
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Prenom
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Telephone
+                </th>
+              
+                <th scope="col" class="px-6 py-3">
+                    Formation
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Reponse
+                </th>
+                <td class="px-6 py-4 font-medium">
+                    Date de demande
+                </td>
+                {% if demande.validation == 'Accepte' %}
+                <td class="px-6 py-4 font-medium">
+                    Date de confirmation
+                </td>
+                {% endif %}
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{demande.nom}}
+                </th>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.prenom}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.email}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.telephone}}
+                </td>
+               
+                <td class="px-6 py-4 font-medium">
+                    {{demande.id_formation}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.message}}
+                </td>
+                <td class="px-6 py-4 font-medium">
+                    {{demande.date_add}}
+                </td>
+                {% if demande.validation == 'Accepte' %}
+                <td class="px-6 py-4 font-medium">
+                    {{demande.date_confirmation}}
+                </td>
+                {% endif %}
+                <td class="px-6 py-4 font-medium">
+                    {% if demande.validation == 'En attente' %}
+              
+                <span class="">Votre Demande est en attente..</span>
+              
+              {% elif demande.validation == 'Accepte' %}
+                   <p class="text-center" style="color: green;font-size: 15px;"><i class="fas fa-check-circle"></i> Accepte</p><td>
+              {% elif demande.validation == 'Refuse' %}
+              <p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-times-circle"></i> Refuse</p>
+              {% endif %}
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    {% endif %}
+    {% endif %}
+
+    </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock content %}

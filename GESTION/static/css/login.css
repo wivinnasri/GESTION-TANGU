@@ -1,0 +1,68 @@
+/*=========================profil=========================*/
+body{
+    font-family: Montserrat, sans-serif;
+    background: transparent;
+  }
+.containere{
+    user-select: none;
+    margin: 100px auto;
+    background: transparent;
+    color: #b3b8cd;
+    border-radius: 5px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+  }
+  .cover-photo{
+    height: 360px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    margin-left: 70px;
+  }
+  .profilet{
+    height: 320px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+  }
+  .profile-name{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .about{
+    margin-top: 35px;
+    line-height: 21px;
+  }
+  button{
+    margin: 10px 0 40px 0;
+  }
+  .msg-btn, .follow-btn{
+    background: #03bfbc;
+    border: 1px solid #03bfbc;
+    padding: 10px 25px;
+    color: #231e39;
+    border-radius: 3px;
+    font-family: Montserrat, sans-serif;
+    cursor: pointer;
+  }
+  .follow-btn{
+    margin-left: 10px;
+    background: transparent;
+    color: #02899c;
+  }
+  .follow-btn:hover{
+    color: #231e39;
+    background: #03bfbc;
+    transition: .5s;
+  }
+  .containere i{
+    padding-left: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .5s;
+  }
+  .containere i:hover{
+    color: #03bfbc;
+  }
+  

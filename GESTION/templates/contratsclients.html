@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Contrats des clients</h2>
+          <a href="{% url 'contratclients' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+          <div class="search">
+            <form action="" class="d-flex flex-row">
+            <label>
+                <input type="text" name="item_name" placeholder="Rechercher Ici" style="color: black;">
+                <button type="submit">
+                    <i class="fas fa-search" style="color: black;"></i>
+                </button>
+            </label>
+        </form>
+        </div>
+          <a href="{% url 'contratclientsadd' %}" class="btn">Ajouter un contrat <i class="fas fa-plus"></i></a>
+        </div>
+        {% if messages %}
+        <ul class="messages text-center pb-2" style="color: #198754;">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-check-circle"></i> {{ message }} <i>&#127881</i></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <table style="width: 85vw;" class="table table-bordered">
+          <thead>
+            <tr>
+            <td>#</td>
+              <td class="text-start">Nom du contrat</td>
+              <td>Code du Contrat</td>
+              <td>Lettre de commande</td>
+              <td>Client</td>
+              <td>Date d'ajouter</td>
+              <td class="text-center">Action</td>
+            </tr>
+          </thead>
+          {% if admin_i %}
+
+             
+          <tbody>
+            {% for admin in admin_i %}
+            <tr>
+              <td>{{admin.id}}</td>
+              <td class="text-start">{{admin.nom_contrat}}</td>
+              <td class="text-start">{{admin.code_contrat}}</td>
+              <td style="display: flex;gap:0.5rem;">
+              <p class="card-text"><small><a style="font-size: 15px;" href="{{ admin.lettre_contrat.url }}"><i class="fas fa-file-pdf"></i>Voir la lettre de commande</a></small></p>
+              <td class="text-start">{{admin.id_client}}</td>
+            </td>
+              <td>{{admin.date_add}}</td>
+              <td style="display: flex;gap:0.5rem;">
+                <!--<a href="#" class="btn btn-success d-flex items-center" style="gap:0.2rem;"><i class="far fa-eye" style="color: white;"></i> Visualiser</a>-->
+                <a href="{% url 'contrats' admin.id %}" class="btn btn-warning d-flex items-center" style="gap:0.2rem;"><i class="far fa-edit" style="color: black;"></i> Editer</a>
+                <!--<a href="#" class="btn btn-danger d-flex items-center" style="gap:0.2rem;"><i class="fas fa-trash-alt" style="color: white;"></i> Rétirer</a>-->
+              </td>
+            
+            </tr>
+             {% endfor %}
+
+         {% else %}
+              <tr><td class="text-center" colspan="7"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-thermometer-empty"></i> Pas des enregistrements</p><td></tr>
+          {% endif %}
+          </tbody>
+        </table>
+     <hr style="color: black;margin-bottom: 10px;">
+        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if admin_i.has_previous %}
+              <li class="page-item">
+                
+                <a class="page-link" href="?page={{admin_i.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                
+              </li>
+              {% endif %}
+              <li class="page-item active"><a class="page-link" href="?page={{admin_i.number}}">{{admin_i.number}}</a></li>
+              {% if admin_i.has_next %}
+              <li class="page-item">
+                
+                <a class="page-link"href="?page={{admin_i.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+               
+              </li>
+               {% endif %}
+            </ul>
+          </nav>
+          <nav style="top: 0;right: 1;">
+            <a href="{% url 'archivres' %}" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-arrow-left"></i> Retour en arriere</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

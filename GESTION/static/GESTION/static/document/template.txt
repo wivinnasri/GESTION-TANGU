@@ -1,0 +1,1084 @@
+<button class="bg-sky-500 hover:bg-sky-700 ...">
+  Save changes
+</button>
+
+<form class="flex items-center space-x-6">
+  <div class="shrink-0">
+    <img class="h-16 w-16 object-cover rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80" alt="Current profile photo" />
+  </div>
+  <label class="block">
+    <span class="sr-only">Choose profile photo</span>
+    <input type="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+  </label>
+</form>
+<button type="button" class="bg-indigo-500 ..." disabled>
+  <svg class="motion-reduce:hidden animate-spin ..." viewBox="0 0 24 24"><!-- ... --></svg>
+  Processing...
+</button>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+<div class="min-h-full">
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Reports</a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+
+            <!-- Profile dropdown -->
+            <div class="relative ml-3">
+              <div>
+                <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+              </div>
+
+              <!--
+                Dropdown menu, show/hide based on menu state.
+
+                Entering: "transition ease-out duration-100"
+                  From: "transform opacity-0 scale-95"
+                  To: "transform opacity-100 scale-100"
+                Leaving: "transition ease-in duration-75"
+                  From: "transform opacity-100 scale-100"
+                  To: "transform opacity-0 scale-95"
+              -->
+              <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <!-- Active: "bg-gray-100", Not Active: "" -->
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button -->
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!-- Menu open: "hidden", Menu closed: "block" -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!-- Menu open: "block", Menu closed: "hidden" -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="md:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Reports</a>
+      </div>
+      <div class="border-t border-gray-700 pb-3 pt-4">
+        <div class="flex items-center px-5">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="text-base font-medium leading-none text-white">Tom Cook</div>
+            <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+          </div>
+          <button type="button" class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">View notifications</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-3 space-y-1 px-2">
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+    </div>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <!-- Your content -->
+    </div>
+  </main>
+</div>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+  <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+    <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+  </div>
+  <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+    <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+  </div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+    </div>
+    <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+      <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+        <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
+        <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
+        <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
+        <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col-reverse">
+          <dt class="text-base leading-7 text-gray-300">Offices worldwide</dt>
+          <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
+        </div>
+        <div class="flex flex-col-reverse">
+          <dt class="text-base leading-7 text-gray-300">Full-time colleagues</dt>
+          <dd class="text-2xl font-bold leading-9 tracking-tight text-white">300+</dd>
+        </div>
+        <div class="flex flex-col-reverse">
+          <dt class="text-base leading-7 text-gray-300">Hours per week</dt>
+          <dd class="text-2xl font-bold leading-9 tracking-tight text-white">40</dd>
+        </div>
+        <div class="flex flex-col-reverse">
+          <dt class="text-base leading-7 text-gray-300">Paid time off</dt>
+          <dd class="text-2xl font-bold leading-9 tracking-tight text-white">Unlimited</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper suspendisse.</p>
+    </div>
+    <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+      <li>
+        <div class="flex items-center gap-x-6">
+          <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          <div>
+            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+            <p class="text-sm font-semibold leading-6 text-indigo-600">Co-Founder / CEO</p>
+          </div>
+        </div>
+      </li>
+
+      <!-- More people... -->
+    </ul>
+  </div>
+</div>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+element.style {
+}
+.container[data-v-b6d9a2c7] * {
+    pointer-events: auto;
+}
+.VPSwitch[data-v-897a5b6d] {
+    position: relative;
+    border-radius: 11px;
+    display: block;
+    width: 40px;
+    height: 22px;
+    flex-shrink: 0;
+    border: 1px solid var(--vp-input-border-color);
+    background-color: var(--vp-input-switch-bg-color);
+    transition: border-color .25s!important;
+}
+button:enabled, [role=button]:enabled {
+    cursor: pointer;
+}
+button {
+    padding: 0;
+    font-family: inherit;
+    background-color: transparent;
+    background-image: none;
+}
+button, input, optgroup, select, textarea {
+    border: 0;
+    padding: 0;
+    line-height: inherit;
+    color: inherit;
+}
+a, area, button, [role=button], input, label, select, summary, textarea {
+    touch-action: manipulation;
+}
+*, :before, :after {
+    box-sizing: border-box;
+}
+feuille de style user-agent
+button {
+    appearance: auto;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-variant-position: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+.container>.title[data-v-b6d9a2c7], .container>.content[data-v-b6d9a2c7] {
+    pointer-events: none;
+}
+.container[data-v-b6d9a2c7] {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: calc(var(--vp-layout-max-width) - 64px);
+    height: var(--vp-nav-height);
+    pointer-events: none;
+}
+.VPNavBar[data-v-b6d9a2c7] {
+    position: relative;
+    border-bottom: 1px solid transparent;
+    padding: 0 8px 0 24px;
+    height: var(--vp-nav-height);
+    pointer-events: none;
+    white-space: nowrap;
+}
+.VPNav[data-v-dabbe568] {
+    position: relative;
+    top: var(--vp-layout-top-height, 0px);
+    left: 0;
+    z-index: var(--vp-z-index-nav);
+    width: 100%;
+    pointer-events: none;
+    transition: background-color .5s;
+}
+body {
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    line-height: 24px;
+    font-family: var(--vp-font-family-base);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--vp-c-text-1);
+    background-color: var(--vp-c-bg);
+    direction: ltr;
+    font-synthesis: style;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html.dark {
+    color-scheme: dark;
+}
+.dark {
+    --vp-custom-block-tip-border: var(--vp-c-brand);
+    --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+    --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+:root {
+    --vp-custom-block-tip-border: var(--vp-c-brand);
+    --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+    --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+:root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient( 120deg, #bd34fe 30%, #41d1ff );
+    --vp-home-hero-image-background-image: linear-gradient( -45deg, #bd34fe 50%, #47caff 50% );
+    --vp-home-hero-image-filter: blur(40px);
+}
+:root {
+    --vp-button-brand-border: var(--vp-c-brand-light);
+    --vp-button-brand-text: var(--vp-c-white);
+    --vp-button-brand-bg: var(--vp-c-brand);
+    --vp-button-brand-hover-border: var(--vp-c-brand-light);
+    --vp-button-brand-hover-text: var(--vp-c-white);
+    --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+    --vp-button-brand-active-border: var(--vp-c-brand-light);
+    --vp-button-brand-active-text: var(--vp-c-white);
+    --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+:root {
+    --vp-c-brand: #646cff;
+    --vp-c-brand-light: #747bff;
+    --vp-c-brand-lighter: #9499ff;
+    --vp-c-brand-lightest: #bcc0ff;
+    --vp-c-brand-dark: #535bf2;
+    --vp-c-brand-darker: #454ce1;
+    --vp-c-brand-dimm: rgba(100, 108, 255, .08);
+}
+@media (max-width: 768px)
+:root {
+    --docsearch-spacing: 10px;
+    --docsearch-footer-height: 40px;
+}
+:root {
+    --docsearch-primary-color: #5468ff;
+    --docsearch-text-color: #1c1e21;
+    --docsearch-spacing: 12px;
+    --docsearch-icon-stroke-width: 1.4;
+    --docsearch-highlight-color: var(--docsearch-primary-color);
+    --docsearch-muted-color: #969faf;
+    --docsearch-container-background: rgba(101,108,133,.8);
+    --docsearch-logo-color: #5468ff;
+    --docsearch-modal-width: 560px;
+    --docsearch-modal-height: 600px;
+    --docsearch-modal-background: #f5f6f7;
+    --docsearch-modal-shadow: inset 1px 1px 0 0 hsla(0,0%,100%,.5),0 3px 8px 0 #555a64;
+    --docsearch-searchbox-height: 56px;
+    --docsearch-searchbox-background: #ebedf0;
+    --docsearch-searchbox-focus-background: #fff;
+    --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
+    --docsearch-hit-height: 56px;
+    --docsearch-hit-color: #444950;
+    --docsearch-hit-active-color: #fff;
+    --docsearch-hit-background: #fff;
+    --docsearch-hit-shadow: 0 1px 3px 0 #d4d9e1;
+    --docsearch-key-gradient: linear-gradient(-225deg,#d5dbe4,#f8f8f8);
+    --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(30,35,90,.4);
+    --docsearch-footer-height: 44px;
+    --docsearch-footer-background: #fff;
+    --docsearch-footer-shadow: 0 -1px 0 0 #e0e3e8,0 -3px 6px 0 rgba(69,98,155,.12);
+}
+:root {
+    --vp-local-search-bg: var(--vp-c-bg);
+    --vp-local-search-result-bg: var(--vp-c-bg);
+    --vp-local-search-result-border: var(--vp-c-divider);
+    --vp-local-search-result-selected-bg: var(--vp-c-bg);
+    --vp-local-search-result-selected-border: var(--vp-c-brand-1);
+    --vp-local-search-highlight-bg: var(--vp-c-brand-1);
+    --vp-local-search-highlight-text: var(--vp-c-neutral-inverse);
+}
+:root {
+    --vp-carbon-ads-text-color: var(--vp-c-text-1);
+    --vp-carbon-ads-poweredby-color: var(--vp-c-text-2);
+    --vp-carbon-ads-bg-color: var(--vp-c-bg-soft);
+    --vp-carbon-ads-hover-text-color: var(--vp-c-brand-1);
+    --vp-carbon-ads-hover-poweredby-color: var(--vp-c-text-1);
+}
+:root {
+    --vp-badge-info-border: transparent;
+    --vp-badge-info-text: var(--vp-c-text-2);
+    --vp-badge-info-bg: var(--vp-c-default-soft);
+    --vp-badge-tip-border: transparent;
+    --vp-badge-tip-text: var(--vp-c-brand-1);
+    --vp-badge-tip-bg: var(--vp-c-brand-soft);
+    --vp-badge-warning-border: transparent;
+    --vp-badge-warning-text: var(--vp-c-warning-1);
+    --vp-badge-warning-bg: var(--vp-c-warning-soft);
+    --vp-badge-danger-border: transparent;
+    --vp-badge-danger-text: var(--vp-c-danger-1);
+    --vp-badge-danger-bg: var(--vp-c-danger-soft);
+}
+:root {
+    --vp-home-hero-name-color: var(--vp-c-brand-1);
+    --vp-home-hero-name-background: transparent;
+    --vp-home-hero-image-background-image: none;
+    --vp-home-hero-image-filter: none;
+}
+:root {
+    --vp-backdrop-bg-color: rgba(0, 0, 0, .6);
+}
+:root {
+    --vp-sidebar-width: 272px;
+    --vp-sidebar-bg-color: var(--vp-c-bg-alt);
+}
+:root {
+    --vp-local-nav-bg-color: var(--vp-c-bg);
+}
+:root {
+    --vp-nav-height: 64px;
+    --vp-nav-bg-color: var(--vp-c-bg);
+    --vp-nav-screen-bg-color: var(--vp-c-bg);
+    --vp-nav-logo-height: 24px;
+}
+:root {
+    --vp-input-border-color: var(--vp-c-border);
+    --vp-input-bg-color: var(--vp-c-bg-alt);
+    --vp-input-switch-bg-color: var(--vp-c-gray-soft);
+}
+:root {
+    --vp-custom-block-font-size: 14px;
+    --vp-custom-block-code-font-size: 13px;
+    --vp-custom-block-info-border: transparent;
+    --vp-custom-block-info-text: var(--vp-c-text-1);
+    --vp-custom-block-info-bg: var(--vp-c-default-soft);
+    --vp-custom-block-info-code-bg: var(--vp-c-default-soft);
+    --vp-custom-block-tip-border: transparent;
+    --vp-custom-block-tip-text: var(--vp-c-text-1);
+    --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+    --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+    --vp-custom-block-warning-border: transparent;
+    --vp-custom-block-warning-text: var(--vp-c-text-1);
+    --vp-custom-block-warning-bg: var(--vp-c-warning-soft);
+    --vp-custom-block-warning-code-bg: var(--vp-c-warning-soft);
+    --vp-custom-block-danger-border: transparent;
+    --vp-custom-block-danger-text: var(--vp-c-text-1);
+    --vp-custom-block-danger-bg: var(--vp-c-danger-soft);
+    --vp-custom-block-danger-code-bg: var(--vp-c-danger-soft);
+    --vp-custom-block-details-border: var(--vp-custom-block-info-border);
+    --vp-custom-block-details-text: var(--vp-custom-block-info-text);
+    --vp-custom-block-details-bg: var(--vp-custom-block-info-bg);
+    --vp-custom-block-details-code-bg: var(--vp-custom-block-info-code-bg);
+}
+:root {
+    --vp-button-brand-border: transparent;
+    --vp-button-brand-text: var(--vp-c-white);
+    --vp-button-brand-bg: var(--vp-c-brand-3);
+    --vp-button-brand-hover-border: transparent;
+    --vp-button-brand-hover-text: var(--vp-c-white);
+    --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+    --vp-button-brand-active-border: transparent;
+    --vp-button-brand-active-text: var(--vp-c-white);
+    --vp-button-brand-active-bg: var(--vp-c-brand-1);
+    --vp-button-alt-border: transparent;
+    --vp-button-alt-text: var(--vp-c-text-1);
+    --vp-button-alt-bg: var(--vp-c-default-3);
+    --vp-button-alt-hover-border: transparent;
+    --vp-button-alt-hover-text: var(--vp-c-text-1);
+    --vp-button-alt-hover-bg: var(--vp-c-default-2);
+    --vp-button-alt-active-border: transparent;
+    --vp-button-alt-active-text: var(--vp-c-text-1);
+    --vp-button-alt-active-bg: var(--vp-c-default-1);
+    --vp-button-sponsor-border: var(--vp-c-text-2);
+    --vp-button-sponsor-text: var(--vp-c-text-2);
+    --vp-button-sponsor-bg: transparent;
+    --vp-button-sponsor-hover-border: var(--vp-c-sponsor);
+    --vp-button-sponsor-hover-text: var(--vp-c-sponsor);
+    --vp-button-sponsor-hover-bg: transparent;
+    --vp-button-sponsor-active-border: var(--vp-c-sponsor);
+    --vp-button-sponsor-active-text: var(--vp-c-sponsor);
+    --vp-button-sponsor-active-bg: transparent;
+}
+:root {
+    --vp-code-line-height: 1.7;
+    --vp-code-font-size: .875em;
+    --vp-code-color: var(--vp-c-brand-1);
+    --vp-code-link-color: var(--vp-c-brand-1);
+    --vp-code-link-hover-color: var(--vp-c-brand-2);
+    --vp-code-bg: var(--vp-c-default-soft);
+    --vp-code-block-color: var(--vp-c-text-2);
+    --vp-code-block-bg: var(--vp-c-bg-alt);
+    --vp-code-block-divider-color: var(--vp-c-gutter);
+    --vp-code-lang-color: var(--vp-c-text-3);
+    --vp-code-line-highlight-color: var(--vp-c-default-soft);
+    --vp-code-line-number-color: var(--vp-c-text-3);
+    --vp-code-line-diff-add-color: var(--vp-c-green-soft);
+    --vp-code-line-diff-add-symbol-color: var(--vp-c-green-1);
+    --vp-code-line-diff-remove-color: var(--vp-c-red-soft);
+    --vp-code-line-diff-remove-symbol-color: var(--vp-c-red-1);
+    --vp-code-line-warning-color: var(--vp-c-yellow-soft);
+    --vp-code-line-error-color: var(--vp-c-red-soft);
+    --vp-code-copy-code-border-color: var(--vp-c-divider);
+    --vp-code-copy-code-bg: var(--vp-c-bg-soft);
+    --vp-code-copy-code-hover-border-color: var(--vp-c-divider);
+    --vp-code-copy-code-hover-bg: var(--vp-c-bg);
+    --vp-code-copy-code-active-text: var(--vp-c-text-2);
+    --vp-code-copy-copied-text-content: "Copied";
+    --vp-code-tab-divider: var(--vp-code-block-divider-color);
+    --vp-code-tab-text-color: var(--vp-c-text-2);
+    --vp-code-tab-bg: var(--vp-code-block-bg);
+    --vp-code-tab-hover-text-color: var(--vp-c-text-1);
+    --vp-code-tab-active-text-color: var(--vp-c-text-1);
+    --vp-code-tab-active-bar-color: var(--vp-c-brand-1);
+}
+:root {
+    --vp-header-anchor-symbol: "#";
+}
+:root {
+    --vp-layout-max-width: 1440px;
+}
+:root {
+    --vp-icon-copy: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E);
+    --vp-icon-copied: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E);
+}
+:root {
+    --vp-z-index-footer: 10;
+    --vp-z-index-local-nav: 20;
+    --vp-z-index-nav: 30;
+    --vp-z-index-layout-top: 40;
+    --vp-z-index-backdrop: 50;
+    --vp-z-index-sidebar: 60;
+}
+:root {
+    --vp-shadow-1: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
+    --vp-shadow-2: 0 3px 12px rgba(0, 0, 0, .07), 0 1px 4px rgba(0, 0, 0, .07);
+    --vp-shadow-3: 0 12px 32px rgba(0, 0, 0, .1), 0 2px 6px rgba(0, 0, 0, .08);
+    --vp-shadow-4: 0 14px 44px rgba(0, 0, 0, .12), 0 3px 9px rgba(0, 0, 0, .12);
+    --vp-shadow-5: 0 18px 56px rgba(0, 0, 0, .16), 0 4px 12px rgba(0, 0, 0, .16);
+}
+:root {
+    --vp-font-family-base: "Chinese Quotes", "Inter var", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --vp-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+:root {
+    --vp-c-default-1: var(--vp-c-gray-1);
+    --vp-c-default-2: var(--vp-c-gray-2);
+    --vp-c-default-3: var(--vp-c-gray-3);
+    --vp-c-default-soft: var(--vp-c-gray-soft);
+    --vp-c-brand-1: var(--vp-c-indigo-1);
+    --vp-c-brand-2: var(--vp-c-indigo-2);
+    --vp-c-brand-3: var(--vp-c-indigo-3);
+    --vp-c-brand-soft: var(--vp-c-indigo-soft);
+    --vp-c-brand: var(--vp-c-brand-1);
+    --vp-c-tip-1: var(--vp-c-brand-1);
+    --vp-c-tip-2: var(--vp-c-brand-2);
+    --vp-c-tip-3: var(--vp-c-brand-3);
+    --vp-c-tip-soft: var(--vp-c-brand-soft);
+    --vp-c-warning-1: var(--vp-c-yellow-1);
+    --vp-c-warning-2: var(--vp-c-yellow-2);
+    --vp-c-warning-3: var(--vp-c-yellow-3);
+    --vp-c-warning-soft: var(--vp-c-yellow-soft);
+    --vp-c-danger-1: var(--vp-c-red-1);
+    --vp-c-danger-2: var(--vp-c-red-2);
+    --vp-c-danger-3: var(--vp-c-red-3);
+    --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+.dark {
+    --vp-c-text-1: rgba(255, 255, 245, .86);
+    --vp-c-text-2: rgba(235, 235, 245, .6);
+    --vp-c-text-3: rgba(235, 235, 245, .38);
+}
+:root {
+    --vp-c-text-1: rgba(60, 60, 67);
+    --vp-c-text-2: rgba(60, 60, 67, .78);
+    --vp-c-text-3: rgba(60, 60, 67, .56);
+}
+.dark {
+    --vp-c-border: #3c3f44;
+    --vp-c-divider: #2e2e32;
+    --vp-c-gutter: #000000;
+}
+:root {
+    --vp-c-border: #c2c2c4;
+    --vp-c-divider: #e2e2e3;
+    --vp-c-gutter: #e2e2e3;
+}
+.dark {
+    --vp-c-bg: #1b1b1f;
+    --vp-c-bg-alt: #161618;
+    --vp-c-bg-elv: #202127;
+    --vp-c-bg-soft: #202127;
+}
+:root {
+    --vp-c-bg: #ffffff;
+    --vp-c-bg-alt: #f6f6f7;
+    --vp-c-bg-elv: #ffffff;
+    --vp-c-bg-soft: #f6f6f7;
+}
+.dark {
+    --vp-c-gray-1: #515c67;
+    --vp-c-gray-2: #414853;
+    --vp-c-gray-3: #32363f;
+    --vp-c-gray-soft: rgba(101, 117, 133, .16);
+    --vp-c-indigo-1: #a8b1ff;
+    --vp-c-indigo-2: #5c73e7;
+    --vp-c-indigo-3: #3e63dd;
+    --vp-c-indigo-soft: rgba(100, 108, 255, .16);
+    --vp-c-green-1: #3dd68c;
+    --vp-c-green-2: #30a46c;
+    --vp-c-green-3: #298459;
+    --vp-c-green-soft: rgba(16, 185, 129, .16);
+    --vp-c-yellow-1: #f9b44e;
+    --vp-c-yellow-2: #da8b17;
+    --vp-c-yellow-3: #a46a0a;
+    --vp-c-yellow-soft: rgba(234, 179, 8, .16);
+    --vp-c-red-1: #f66f81;
+    --vp-c-red-2: #f14158;
+    --vp-c-red-3: #b62a3c;
+    --vp-c-red-soft: rgba(244, 63, 94, .16);
+}
+:root {
+    --vp-c-gray-1: #dddde3;
+    --vp-c-gray-2: #e4e4e9;
+    --vp-c-gray-3: #ebebef;
+    --vp-c-gray-soft: rgba(142, 150, 170, .14);
+    --vp-c-indigo-1: #3451b2;
+    --vp-c-indigo-2: #3a5ccc;
+    --vp-c-indigo-3: #5672cd;
+    --vp-c-indigo-soft: rgba(100, 108, 255, .14);
+    --vp-c-green-1: #18794e;
+    --vp-c-green-2: #299764;
+    --vp-c-green-3: #30a46c;
+    --vp-c-green-soft: rgba(16, 185, 129, .14);
+    --vp-c-yellow-1: #915930;
+    --vp-c-yellow-2: #946300;
+    --vp-c-yellow-3: #9f6a00;
+    --vp-c-yellow-soft: rgba(234, 179, 8, .14);
+    --vp-c-red-1: #b8272c;
+    --vp-c-red-2: #d5393e;
+    --vp-c-red-3: #e0575b;
+    --vp-c-red-soft: rgba(244, 63, 94, .14);
+    --vp-c-sponsor: #db2777;
+}
+.dark {
+    --vp-c-neutral: var(--vp-c-white);
+    --vp-c-neutral-inverse: var(--vp-c-black);
+}
+:root {
+    --vp-c-white: #ffffff;
+    --vp-c-black: #000000;
+    --vp-c-neutral: var(--vp-c-black);
+    --vp-c-neutral-inverse: var(--vp-c-white);
+}
+html {
+    line-height: 1.4;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+*, :before, :after {
+    box-sizing: border-box;
+}
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+div class="flex font-sans">
+  <div class="flex-none w-48 relative">
+    <img src="/classic-utility-jacket.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+  </div>
+  <form class="flex-auto p-6">
+    <div class="flex flex-wrap">
+      <h1 class="flex-auto text-lg font-semibold text-slate-900">
+        Utility Jacket
+      </h1>
+      <div class="text-lg font-semibold text-slate-500">
+        $110.00
+      </div>
+      <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2">
+        In stock
+      </div>
+    </div>
+    <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+      <div class="space-x-2 flex text-sm">
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="xs" checked />
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+            XS
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="s" />
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+            S
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="m" />
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+            M
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="l" />
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+            L
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="xl" />
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+            XL
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="flex space-x-4 mb-6 text-sm font-medium">
+      <div class="flex-auto flex space-x-4">
+        <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
+          Buy now
+        </button>
+        <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+          Add to bag
+        </button>
+      </div>
+      <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
+        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-slate-700">
+      Free shipping on all continental US orders.
+    </p>
+  </form>
+</div>
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+<section>
+  <header class="bg-white space-y-4 p-4 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
+    <div class="flex items-center justify-between">
+      <h2 class="font-semibold text-slate-900">Projects</h2>
+      <a href="/new" class="hover:bg-blue-400 group flex items-center rounded-md bg-blue-500 text-white text-sm font-medium pl-2 pr-3 py-2 shadow-sm">
+        <svg width="20" height="20" fill="currentColor" class="mr-2" aria-hidden="true">
+          <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
+        </svg>
+        New
+      </a>
+    </div>
+    <form class="group relative">
+      <svg width="20" height="20" fill="currentColor" class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500" aria-hidden="true">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
+      </svg>
+      <input class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" placeholder="Filter projects...">
+    </form>
+  </header>
+  <ul class="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
+    <li x-for="project in projects">
+      <a :href="project.url" class="hover:bg-blue-500 hover:ring-blue-500 hover:shadow-md group rounded-md p-3 bg-white ring-1 ring-slate-200 shadow-sm">
+        <dl class="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+          <div>
+            <dt class="sr-only">Title</dt>
+            <dd class="group-hover:text-white font-semibold text-slate-900">
+              {project.title}
+            </dd>
+          </div>
+          <div>
+            <dt class="sr-only">Category</dt>
+            <dd class="group-hover:text-blue-200">{project.category}</dd>
+          </div>
+          <div class="col-start-2 row-start-1 row-end-3 sm:mt-4 lg:mt-0 xl:mt-4">
+            <dt class="sr-only">Users</dt>
+            <dd x-for="user in project.users" class="flex justify-end sm:justify-start lg:justify-end xl:justify-start -space-x-1.5">
+              <img :src="user.avatar" :alt="user.name" class="w-6 h-6 rounded-full bg-slate-100 ring-2 ring-white" loading="lazy">
+            </dd>
+          </div>
+        </dl>
+      </a>
+    </li>
+    <li class="flex">
+      <a href="/new" class="hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
+        <svg class="group-hover:text-blue-500 mb-1 text-slate-400" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
+        </svg>
+        New project
+      </a>
+    </li>
+  </ul>
+</section>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<!-- HTML in your document's head -->
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+/* CSS */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<script src="//unpkg.com/alpinejs" defer></script>
+ 
+<div x-data="{ open: false }">
+    <button @click="open = true">Expand</button>
+ 
+    <span x-show="open">
+        Content...
+    </span>
+</div>
+
+./.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<div x-data="{ open: false }">
+    ...
+</div>
+x-bind
+Dynamically set HTML attributes on an element
+
+<div x-bind:class="! open ? 'hidden' : ''">
+  ...
+</div>
+x-on
+Listen for browser events on an element
+
+<button x-on:click="open = ! open">
+  Toggle
+</button>
+x-text
+Set the text content of an element
+
+<div>
+  Copyright ©
+ 
+  <span x-text="new Date().getFullYear()"></span>
+</div>
+x-html
+Set the inner HTML of an element
+
+<div x-html="(await axios.get('/some/html/partial')).data">
+  ...
+</div>
+x-model
+Synchronize a piece of data with an input element
+
+<div x-data="{ search: '' }">
+  <input type="text" x-model="search">
+ 
+  Searching for: <span x-text="search"></span>
+</div>
+x-show
+Toggle the visibility of an element
+
+<div x-show="open">
+  ...
+</div>
+x-transition
+Transition an element in and out using CSS transitions
+
+<div x-show="open" x-transition>
+  ...
+</div>
+x-for
+Repeat a block of HTML based on a data set
+
+<template x-for="post in posts">
+  <h2 x-text="post.title"></h2>
+</template>
+x-if
+Conditionally add/remove a block of HTML from the page entirely
+
+<template x-if="open">
+  <div>...</div>
+</template>
+x-init
+Run code when an element is initialized by Alpine
+
+<div x-init="date = new Date()"></div>
+x-effect
+Execute a script each time one of its dependancies change
+
+<div x-effect="console.log('Count is '+count)"></div>
+x-ref
+Reference elements directly by their specified keys using the $refs magic property
+
+<input type="text" x-ref="content">
+ 
+<button x-on:click="navigator.clipboard.writeText($refs.content.value)">
+  Copy
+</button>
+x-cloak
+Hide a block of HTML until after Alpine is finished initializing its contents
+
+<div x-cloak>
+  ...
+</div>
+x-ignore
+Prevent a block of HTML from being initialized by Alpine
+
+<div x-ignore>
+  ...
+</div>
+$store
+Access a global store registered using Alpine.store(...)
+
+<h1 x-text="$store.site.title"></h1>
+$el
+Reference the current DOM element
+
+<div x-init="new Pikaday($el)"></div>
+$dispatch
+Dispatch a custom browser event from the current element
+
+<div x-on:notify="...">
+  <button x-on:click="$dispatch('notify')">...</button>
+</div>
+$watch
+Watch a piece of data and run the provided callback anytime it changes
+
+<div x-init="$watch('count', value => {
+  console.log('count is ' + value)
+})">...</div>
+$refs
+Reference an element by key (specified using x-ref)
+
+<div x-init="$refs.button.remove()">
+  <button x-ref="button">Remove Me</button>
+</div>
+$nextTick
+Wait until the next "tick" (browser paint) to run a bit of code
+
+<div
+  x-text="count"
+  x-text="$nextTick(() => {"
+    console.log('count is ' + $el.textContent)
+  })
+>...</div>
+Alpine.data
+Reuse a data object and reference it using x-data
+
+<div x-data="dropdown">
+  ...
+</div>
+ 
+...
+ 
+Alpine.data('dropdown', () => ({
+  open: false,
+ 
+  toggle() { 
+    this.open = ! this.open
+  }
+}))
+
+<div x-data="dropdown">
+  ...
+</div>
+ 
+...
+ 
+Alpine.data('dropdown', () => ({
+  open: false,
+ 
+  toggle() { 
+    this.open = ! this.open
+  }
+}))
+Alpine.store
+Declare a piece of global, reactive, data that can be accessed from anywhere using $store
+
+<button @click="$store.notifications.notify('...')">
+  Notify
+</button>
+ 
+...
+ 
+Alpine.store('notifications', {
+  items: [],
+ 
+  notify(message) { 
+    this.items.push(message)
+  }
+})
+I hope you find Alpine to be a breath 
+
+
+
+
+<div x-data="{ open: false }">
+    <button @click="open = ! open">Toggle</button>
+ 
+    <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+    >Hello 👋</div>
+</div>
+
+<ul x-data="{ colors: ['Red', 'Orange', 'Yellow'] }">
+    <template x-for="color in colors">
+        <li x-text="color"></li>
+    </template>
+</ul>
+Red
+Orange
+Yellow
+You may also pass objects to x-for.
+
+<ul x-data="{ car: { make: 'Jeep', model: 'Grand Cherokee', color: 'Black' } }">
+    <template x-for="(value, index) in car">
+        <li>
+            <span x-text="index"></span>: <span x-text="value"></span>
+        </li>
+    </template>
+</ul>
+make: Jeep
+model: Grand Cherokee
+color: Black
+///////////////////////////////////////////////////
+<script src="//unpkg.com/alpinejs" defer></script>
+ 
+<div x-data="{ open: false }">
+    <button @click="open = true">Expand</button>
+ 
+    <span x-show="open">
+        Content...
+    </span>
+</div>
+
+
+
+
+
+{{ $posts->image ? $posts->image->path : "PAs image" }}
+
+
+

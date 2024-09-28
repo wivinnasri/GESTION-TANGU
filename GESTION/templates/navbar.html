@@ -1,0 +1,57 @@
+<!-- As a link -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <h2>
+        <a class="navbar-brand d-flex items-center justify-center" href="{% url 'index' %}">
+            <img src="../static/img/tangu1.png" alt="" style="width: 50px;" class="rounded-pill">
+            <p class="font-semibold text-xl tracking-tight">TANGU</p>
+          </a>
+        </h2>
+        <div class="" id="navbarNav">
+            <ul class="navbar-nav d-flex flex-row gap-4 mr-1" style="font-size: 15px;">
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" aria-current="page" href="{% url 'index' %}"><i class="fas fa-home"></i> Accueil</a>
+              </li>
+              {% comment %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="#"><i class="fas fa-th-large"></i> Tableau de Bord</a>
+              </li>
+              {% endcomment %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'employes' %}active{% endif %}" href="{% url 'employes' %}"><i class="fas fa-user"></i> Employes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'clients' %}active{% endif %}" href="{% url 'clients' %}"><i class="fas fa-user"></i> Clients Actifs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'stagiaires' %}active{% endif %}" href="{% url 'stagiaires' %}"><i class="fas fa-user"></i> Clients de formations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'stage' %}active{% endif %}" href="{% url 'stage' %}"><i class="fas fa-user"></i> stagiaires</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'archivres' %}active{% endif %}" href="{% url 'archivres' %}"><i class="fas fa-folder"></i> Archives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'demandes' %}active{% endif %}" href="{% url 'demandes' %}"><i class="fas fa-vote-yea"></i> Demandes</a>
+              </li>
+              <!--
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-bell"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-envelope"></i></a>
+              </li>
+              -->
+              <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'comptes' %}active{% endif %}" href="{% url 'comptes' %}"><i class="fas fa-user-tie"></i> Compte personnel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Sign-out</a>
+              </li>
+            </ul>
+          </div>
+
+    </div>
+  </nav>
+  <hr>

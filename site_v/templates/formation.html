@@ -1,0 +1,97 @@
+{% extends 'home.html' %}
+{% block content %}
+        <div class="container mt-20">
+            <h1 class="text-center text-5xl wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">TANGANYIKA GURU <br><span style="margin-top: 10px;" class="font-medium">All Time With You</span></h1>
+            <nav class="items-center content-center justify-between grid-cols-1" style="margin-left: 670px;margin-top: 60px;">
+              {% if request.user.is_authenticated %}
+            
+              <a href="{% url 'demande' %}" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Faire la Demande</a>
+               
+              {% else %}
+                  <a href="{% url 'inscrire' %}" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-yellow-200 hover:bg-yellow-600 hover:text-white p-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Inscrivrez-Vous</a>
+                  
+              {% endif %}
+                 
+            </nav>
+          </div>
+    
+   <div class="container mt-12 items-center justify-center content-center">
+    <!-- Service 5 - Bootstrap Brain Component -->
+<section class="bg-light py-3 py-md-5 py-xl-8">
+  <div class="container overflow-hidden">
+    <div class="row gy-4 gy-md-5 gy-lg-0 align-items-center">
+      <div class="col-12 col-lg-5">
+        <div class="row">
+          <div class="col-12 col-xl-11">
+            <h3 class="fs-6 text-secondary mb-3 mb-xl-4 text-uppercase">Voici Nos Formations</h3>
+            <h2 class="display-5 mb-3 mb-xl-4">We are giving you perfect training.</h2>
+            <p class="mb-3 mb-xl-4">Our comprehensive suite of training is designed to meet your every need and help you . Contact us today to embark on a journey of growth, innovation, and unparalleled support. Your success is our priority.</p>
+             {% if request.user.is_authenticated %}
+            
+            <a href="{% url 'demande' %}" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Faire la Demande</a>
+             
+            {% else %}
+                <a href="{% url 'inscrire' %}" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-yellow-200 hover:bg-yellow-600 text-black hover:text-white p-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Inscrivrez-Vous</a>
+                
+            {% endif %}
+               
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7 overflow-hidden">
+        <form class="d-flex">
+      <input class="form-control me-2 w-250" type="search" name="item_name" placeholder="Rechercher ici la formation" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Rechercher</button>
+    </form>
+        <div class="row gy-4 mt-8">
+                {% if admin_i %}
+
+           {% for formations in admin_i %}
+          <div class="col-12 col-sm-6">
+            <div class="card border-0 border-bottom border-primary shadow-sm">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-textarea-resize text-primary mb-4" viewBox="0 0 16 16">
+                  <path d="M0 4.5A2.5 2.5 0 0 1 2.5 2h11A2.5 2.5 0 0 1 16 4.5v7a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 11.5v-7zM2.5 3A1.5 1.5 0 0 0 1 4.5v7A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 13.5 3h-11zm10.854 4.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708l3-3a.5.5 0 0 1 .708 0zm0 2.5a.5.5 0 0 1 0 .708l-.5.5a.5.5 0 0 1-.708-.708l.5-.5a.5.5 0 0 1 .708 0z" />
+                </svg>
+                <h4 class="mb-4">{{formations.nom_formation}}</h4>
+                <p class="mb-4 text-secondary">{{formations.description}}.</p>
+                <p class="mb-4 text-secondary">{{formations.payer}}.</p>
+                <p class="mb-4 text-secondary">{{formations.domaine}}.</p>
+                <p class="mb-4 text-secondary">{{formations.date_debut}}  à {{formations.date_fin}}</p>
+              
+              </div>
+            </div>
+          </div>
+              {% endfor %}
+    {% endif %}
+          </div>
+        </div>
+                <div class="d-flex flex-row" style="justify-content: space-between;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if admin_i.has_previous %}
+              <li class="page-item">
+                
+                <a class="page-link" href="?page={{admin_i.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                
+              </li>
+              {% endif %}
+              <li class="page-item active"><a class="page-link" href="?page={{admin_i.number}}">{{admin_i.number}}</a></li>
+              {% if admin_i.has_next %}
+              <li class="page-item">
+                
+                <a class="page-link"href="?page={{admin_i.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+               
+              </li>
+               {% endif %}
+            </ul>
+          </nav>
+          </div>
+        </section>
+
+</div>
+{% endblock content %}

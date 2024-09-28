@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Formations</h2>
+          <a href="{% url 'formations' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+        {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="row g-3" method="post" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Nom de Formation</label>
+                  <input type="text" class="form-control" name="nom" id="validationDefault01" value="{{admin_i.nom_formation}}" placeholder="ex.Apprendre PHP" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault05" class="form-label">Date de debut</label>
+                    <input type="date" class="form-control" value="{{admin_i.date_debut}}" name="date_debut" id="validationDefault05" placeholder="ex.Kigobe">
+                  </div>
+                <div class="col-md-3">
+                  <label for="validationDefault05" class="form-label">Date de fin</label>
+                  <input type="date" class="form-control" value="{{admin_i.date_fin}}" name="date_fin" id="validationDefault05" placeholder="ex.Bujumbura">
+                </div>
+                      <div class="col-md-6">
+                  <label for="validationDefault02" class="form-label">Description</label>
+                  <textarea class="form-control" name="description" id="validationDefault02" rows="3" placeholder="ex.Mark" required>{{admin_i.description}}</textarea>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationDefault02" class="form-label">Centre de formation</label>
+                  <input type="text" class="form-control" name="centre" id="validationDefault05" value="{{admin_i.centre}}" placeholder="ex.kigobe" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationDefault02" class="form-label">Domaine</label>
+                  <input type="text" class="form-control" name="domaine" id="validationDefault05" value="{{admin_i.domaine}}" placeholder="ex.Informatique" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationDefault02" class="form-label">Payer</label>
+                  <input type="text" class="form-control" name="payer" id="validationDefault05" value="{{admin_i.payer}}" placeholder="ex.150.000FBU" required>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-warning" style="color: white;background-color: #ffc107;" type="submit">Modifier</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 mt-4 wow slideInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            {% if request.resolver_match.url_name == 'password_reset' %}
+            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="../../GESTION/static/GESTION/static/img/tangu1.png" class="h-8 me-3" alt="TANGU Logo" />
+<span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">TANGU</span>
+  </a>
+  {% elif request.resolver_match.url_name == 'password_reset_done' %}
+  <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+    <img src="../../GESTION/static/GESTION/static/img/tangu1.png" class="h-8 me-3" alt="TANGU Logo" />
+<span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">TANGU</span>
+</a>
+  {% elif request.resolver_match.url_name == 'password_reset_confirm' %}
+  <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+    <img src="../../GESTION/static/GESTION/static/img/tangu1.png" class="h-8 me-3" alt="TANGU Logo" />
+<span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">TANGU</span>
+</a>
+  {% elif request.resolver_match.url_name == 'password_reset_complete' %}
+  <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+    <img src="../../GESTION/static/GESTION/static/img/tangu1.png" class="h-8 me-3" alt="TANGU Logo" />
+<span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">TANGU</span>
+</a>
+             {% else %}
+            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                          <img src="../../GESTION/static/GESTION/static/img/tangu1.png" class="h-8 me-3" alt="TANGU Logo" />
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">TANGU</span>
+            </a>
+            {% endif %}
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="{% url 'about' %}" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="{% url 'team' %}" class="hover:underline me-4 md:me-6">Team</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}" class="hover:underline me-4 md:me-6">Contact</a>
+                </li>
+                 <li>
+                    <a href="#" class="btn btn-info hover:underline">Back to top</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">GURU™</a>. All Rights Reserved.</span>
+    </div>
+</footer>

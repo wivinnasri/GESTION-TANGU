@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="margin-left: -0.00000005px;">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Demandes des stages</h2>
+          <div class="search">
+            <form action="" class="d-flex flex-row">
+            <label>
+                <input type="text" name="item_name" placeholder="Rechercher Ici" style="color: black;">
+                <button type="submit">
+                    <i class="fas fa-search" style="color: black;"></i>
+                </button>
+            </label>
+        </form>
+        </div>
+        <a href="{% url 'demandesa' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+        </div>
+        {% if messages %}
+        <ul class="messages text-center pb-2" style="color: #198754;">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-check-circle"></i> {{ message }} <i>&#127881</i></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <table style="width: 90vw;" class="table table-bordered">
+          <thead>
+            <tr>
+              <td>Nom</td>
+              <td>Prenom</td>
+              <td>Email</td>
+              <td>Telephone</td>
+              <td>Type de stage</td>
+              <td>Lettre de stage</td>
+              <td>Date de demande</td>
+              <td>Date de confirmation</td>
+              <td>Date de début</td>
+              <td>Date de fin</td>
+              <td class="text-center">Action</td>
+            </tr>
+          </thead>
+            {% if demandes %}
+
+             
+          <tbody>
+            {% for demande in demandes %}
+            <tr>
+              <td>{{demande.nom}}</td>
+              <td class="text-start">{{demande.prenom}}</td>
+              <td>{{demande.email}}</td>
+              <td>{{demande.telephone}}</td>
+              <td>{{demande.type_stage}}</td>
+              <td>
+               
+                <p class="card-text">
+                  <small>
+                  <a style="font-size: 15px;" href="{{demande.lettre_stage.url}}">
+                  <i class="fas fa-file-pdf"></i> Voir la Lettre de demande</a>
+                </small>
+                </p>
+                
+              </td>
+              
+              <!--<td>
+                {% if demande.validation == 'En attente' %}
+                <span class="">Votre Demande est en attente</span>
+                {% elif demande.validation == 'Accepte' %}
+                <span class="">Votre Demande a ete accepte</span>
+                {% elif demande.validation == 'Refuse' %}
+                <span class="">Votre Demande a ete refuse</span>
+                {% endif %}
+              </td>-->
+              <td>{{demande.date_demande}}</td>
+              <td>{{demande.date_confirmation}}</td>
+              <td>{% if demande.etat == 'en_attente' %}
+              <span class="">-</span>
+              
+               {% elif demande.etat == 'accepte' %}
+               {{demande.date_debut}}
+               {% elif demande.etat == 'refuse' %}
+               <span class="">-</span>
+                {% endif %}
+              </td>
+               
+              <td>{% if demande.etat == 'en_attente' %}
+              <span class="">-</span>
+              
+               {% elif demande.etat == 'accepte' %}
+               {{demande.date_fin}}
+               {% elif demande.etat == 'refuse' %}
+               <span class="">-</span>
+                {% endif %}
+              </td>
+              {% if demande.etat == 'en_attente' %}
+              <td style="display: flex;gap:0.5rem;">
+                <a href="{% url 'acceptersa' demande.id %}" class="btn btn-info d-flex items-center" style="gap:0.2rem;"><i class="fas fa-check-circle" style="color: #fff;"></i> Accepter</a>
+                <a href="{% url 'refusersa' demande.id %}" class="btn btn-danger d-flex items-center" style="gap:0.2rem;"><i class="fas fa-times-circle" style="color: white;"></i> Réfuser</a>
+              </td>
+              {% elif demande.etat == 'accepte' %}
+                   <td class="text-center" colspan="10"><p class="text-center" style="color: green;font-size: 15px;"><i class="fas fa-check-circle"></i> Accepte</p><td>
+              {% elif demande.etat == 'refuse' %}
+              <td class="text-center" colspan="10"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-times-circle"></i> Refuse</p><td>
+              {% endif %}
+                                {% endfor %}
+
+         {% else %}
+              <tr><td class="text-center" colspan="10"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-thermometer-empty"></i> Pas des enregistrements</p><td></tr>
+          {% endif %}
+          </tbody>
+        </table>
+             <hr style="color: black;margin-bottom: 10px;">
+        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if demandes.has_previous %}
+              <li class="page-item">
+                
+                <a class="page-link" href="?page={{demandes.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                
+              </li>
+              {% endif %}
+              <li class="page-item active"><a class="page-link" href="?page={{demandes.number}}">{{demandes.number}}</a></li>
+              {% if demandes.has_next %}
+              <li class="page-item">
+                
+                <a class="page-link"href="?page={{demandes.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+               
+              </li>
+               {% endif %}
+            </ul>
+          </nav>
+          <nav style="top: 0;right: 1;">
+            <a href="{% url 'demandes' %}" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-arrow-left"></i> Retour en arriere</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

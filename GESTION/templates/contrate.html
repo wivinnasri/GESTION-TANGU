@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Contrat d'un employe</h2>
+          <a href="{% url 'contratemployes' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+        {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="row g-3" method="post" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="col-md-12 mt-3">
+                <label for="validationDefault04" class="form-label">Employe</label>
+                <h1 class="text-lg">{{admin.id_employe}}</h1>
+              </div>
+                <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Nom du contrat</label>
+                  <input type="text" class="form-control" name="nom" id="validationDefault01" value="{{admin.nom_contrat}}" placeholder="ex.Contrat de maison Africana" required>
+                </div>
+                <div class="col-md-4 mt-3">
+                  <label for="validationDefault01" class="form-label">Code du contrat</label>
+                  <input type="text" class="form-control" name="code" id="validationDefault01" value="{{admin.code_contrat}}" placeholder="ex.Contrat de maison Africana" required>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <label for="validationDefault05" class="form-label">Lettre de commande</label>
+                    <input type="file" class="form-control" name="piece" id="validationDefault05">
+                  </div>
+                  
+                <div class="col-12 mt-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-warning" style="color: white;background-color: #ffc107;" type="submit">Modifier</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Client de formation</h2>
+          <a href="{% url 'stagiairesadd' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+          <a href="{% url 'stagiaires' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+        {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="row g-3" method="post" action="{% url 'stagiairesad' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="col-md-8">
+                  <label for="validationDefault01" class="form-label">Nom</label>
+                  <input type="text" class="form-control" name="nom" id="validationDefault01" value="" placeholder="ex.Izere" required>
+                </div>
+                <div class="col-md-8">
+                  <label for="validationDefault02" class="form-label">Prenom</label>
+                  <input type="text" class="form-control" name="prenom" id="validationDefault02" value="" placeholder="ex.Mark" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationDefaultUsername" class="form-label">Email</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="validationDefaultUsername" placeholder="ex.izeremark@guruacademy.xyz" name="email"  aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationDefault03" class="form-label">Telephone</label>
+                  <input type="text" class="form-control" name="telephone" id="validationDefault03" placeholder="ex.68989887" required>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationDefault05" class="form-label">Date de debut</label>
+                  <input type="date" class="form-control" name="date_debut" id="validationDefault05" placeholder="ex.Kigobe" required>
+                </div>
+              <div class="col-md-3">
+                <label for="validationDefault05" class="form-label">Date de fin</label>
+                <input type="date" class="form-control" name="date_fin" id="validationDefault05" placeholder="ex.Bujumbura" required>
+              </div>
+                <!--<div class="col-md-3">
+                  <label for="validationDefault04" class="form-label">Formation</label>
+  
+                    <input type="text" class="form-control" name="formation" id="validationDefault03" placeholder="ex.PHP" required>
+                  
+                </div>-->
+                  <div class="col-md-3">
+                    <label for="validationDefault04" class="form-label">Formation</label>
+                    <select class="form-select" id="validationDefault04" name="formation" required>
+                      <option selected disabled value="">Choose...</option>
+                      {% for formation in formations %}
+                      <option value="{{formation.id}}">{{formation.nom_formation}}</option>
+                      {% endfor %}
+                    </select> 
+                  </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-primary" style="color: white;background-color: #0d6efd;" type="submit">Enregistrer</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

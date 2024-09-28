@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1 style="text-transform: uppercase;">Categories</h1>
+</div>
+<div class="cardBox">
+    <a href="{% url 'contratemployes' %}">
+  <div class="card d-flex flex-row">
+    <div>
+      <div class="numbers">{{contrats}}</div>
+      <div class="cardName">Contrats des Employes</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-newspaper"></i>
+    </div>
+  </div>
+  </a>
+  <a href="{% url 'contratclients' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(191, 221, 221);">
+    <div>
+      <div class="numbers">{{contrat}}</div>
+      <div class="cardName">Contrats des Clients</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-newspaper"></i>
+    </div>
+  </div>
+  </a>
+  <a href="{% url 'documents' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(94, 205, 205);">
+    <div>
+      <div class="numbers">{{document}}</div>
+      <div class="cardName">Documents Importants</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-paperclip"></i>
+    </div>
+  </div>
+  </a>
+<a href="{% url 'salaire' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(6, 231, 231);">
+    <div>
+      <div class="numbers">{{salaire}}</div>
+      <div class="cardName">Salaire des Employes</div>
+    </div>
+
+    <div class="iconBx">
+        <i class="fas fa-rss"></i>
+    </div>
+
+  </div>
+</a>
+</div>
+<!-- ================= New Customers ================ -->
+<div class="container">
+  <h1 style="text-transform: uppercase;margin-bottom: 15px;">Projets</h1>
+</div>
+ <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>Projets</h2>
+         <a href="{% url 'archivres' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+          <div class="search">
+            <form action="" class="d-flex flex-row">
+            <label>
+                <input type="text" name="item_name" placeholder="Rechercher Ici" style="color: #000;">
+                <button type="submit">
+                    <i class="fas fa-search" style="color: black;"></i>
+                </button>
+            </label>
+        </form>
+        </div>
+          <a href="{% url 'projet' %}" class="btn">Ajouter un projet <i class="fas fa-plus"></i></a>
+      </div>
+      {% if messages %}
+        <ul class="messages text-center pb-2" style="color: #198754;">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-check-circle"></i> {{ message }} <i>&#127881</i></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>Nom du Projet</td>
+            <td class="text-center">Description</td>
+            <td>Date d'ajouter</td>
+            <td class="text-center">Action</td>
+          </tr>
+        </thead>
+           {% if admin_i %}
+
+           {% for employe in admin_i %}
+          
+        <tbody>
+          <tr>
+            <td>{{employe.nom_projet}}</td>
+            <td class="text-center">{{employe.description}}</td>
+            <td>{{employe.date_add}}</td>
+            <td style="display: flex;gap:0.5rem;">
+                <a href="{% url 'projete' employe.id %}" class="btn btn-warning d-flex items-center" style="gap:0.2rem;"><i class="far fa-edit" style="color: black;"></i> Editer</a>
+                <a href="{% url 'projetd' employe.id %}" class="btn btn-danger d-flex items-center" style="gap:0.2rem;"><i class="fas fa-trash-alt" style="color: white;"></i> Rétirer</a>
+              </td>
+          </tr>
+                         {% endfor %}
+
+         {% else %}
+              <tr><td class="text-center" colspan="7"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-thermometer-empty"></i> Pas des enregistrements</p><td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+      <hr style="color: black;margin-bottom: 10px;">
+        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if admin_i.has_previous %}
+              <li class="page-item">
+                
+                <a class="page-link" href="?page={{admin_i.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                
+              </li>
+              {% endif %}
+              <li class="page-item active"><a class="page-link" href="?page={{admin_i.number}}">{{admin_i.number}}</a></li>
+              {% if admin_i.has_next %}
+              <li class="page-item">
+                
+                <a class="page-link"href="?page={{admin_i.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+               
+              </li>
+               {% endif %}
+            </ul>
+          </nav>
+          <nav style="top: 0;right: 1;">
+            <!--<a href="{% url 'index' %}" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-arrow-left"></i> Retour a la page d'accueil</a>-->
+          </nav>
+          </nav>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+  {% endblock content %}

@@ -1,0 +1,56 @@
+
+{% extends 'home.html' %}
+{% block content %}
+        <div class="container mt-20">
+            <h1 class="text-center text-5xl wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">TANGANYIKA GURU <br><span style="margin-top: 10px;" class="font-medium">All Time With You</span></h1>
+            <nav class="items-center content-center justify-between grid-cols-1" style="margin-left: 670px;margin-top: 60px;">
+                 <!--<a href="#" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-8 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Faire ta Demande</a>-->
+            </nav>
+          </div>
+<div class="container">
+  <h3 class="mb-2 text-uppercase text-center text-5xl">Formulaire de Demande</h3>
+  <hr class="mb-5">
+  <form class="row g-3" action="" method="POST">
+    {% csrf_token %}
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Nom</label>
+    <input type="text" class="form-control" name="nom" id="inputEmail4">
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Prenom</label>
+    <input type="text" class="form-control" name="prenom" id="inputEmail4">
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" id="inputEmail4">
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Telephone</label>
+    <input type="text" class="form-control" name="telephone" id="inputEmail4">
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Motif de Stage</label>
+    <input type="text" class="form-control" name="motif" id="inputEmail4">
+  </div>
+    <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Lettre de Stage</label>
+    <input type="file" class="form-control" name="lettre_piece" id="inputEmail4">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Formation</label>
+    <select id="inputState" class="form-select" name="formation">
+       <option selected disabled>Choose...</option>
+       {% if admin_i %}
+
+           {% for formations in admin_i %}
+      <option value="{{formations.id}}">{{formations.nom_formation}}</option>
+         {% endfor %}
+    {% endif %}
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit"  class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-8">Envoyer</button>
+  </div>
+</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,104 @@
+{% extends 'home.html' %}
+{% block content %}
+               <div class="container mt-20">
+            <h1 class="text-center text-5xl wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">TANGANYIKA GURU <br><span style="margin-top: 10px;" class="font-medium">All Time With You</span></h1>
+            <nav class="items-center content-center justify-between grid-cols-1" style="margin-left: 670px;margin-top: 60px;">
+                 <a href="{% url 'connecte' %}" class="text-lg transition duration-500 ease-in-out inline-block hover:border border-blue-500 rounded-full py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white p-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Inscrirez-vous</a>
+            </nav>
+          </div>
+<!-- Registration 8 - Bootstrap Brain Component -->
+<section class="bg-light p-3 p-md-4 p-xl-5 mt-12">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xxl-11">
+        <div class="card border-light-subtle shadow-sm">
+          <div class="row g-0">
+            <div class="col-12 col-md-6">
+              <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="../static/assets/171.jpg" alt="Welcome back you've been missed!">
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+              <div class="col-12 col-lg-11 col-xl-10">
+                <div class="card-body p-3 p-md-4 p-xl-5">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-5">
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                    <img src="../static/img/tangu.png" class="rounded-full h-16 w-16 flex items-center justify-center">
+                    <span class="h1 fw-bold mb-0">TANGU</span>
+                  </div>
+
+                        <h2 class="h4 text-center">Créer Un Compte</h2>
+                      </div>
+                    </div>
+                  </div>
+                  {% if messages %}
+                <ul class="messages text-center pb-2" style="color: red;">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} <i>&#127881</i></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                  <form action="{% url 'inscrir' %}" method="POST" enctype="multipart/form-data" class="wow bounceIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                    {% csrf_token %}
+                    <div class="row gy-3 overflow-hidden">
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" name="nom" id="firstName" placeholder="First Name" required>
+                          <label for="firstName" class="form-label">First Name</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" name="prenom" id="lastName" placeholder="First Name" required>
+                          <label for="lastName" class="form-label">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" name="username" id="lastName" placeholder="Nom d'utilisateur" required>
+                          <label for="lastName" class="form-label">Username</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                          <label for="email" class="form-label">Email</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+                          <label for="password" class="form-label">Password</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
+                          <label class="form-check-label text-secondary" for="iAgree">
+                            I agree to the <a href="#!" class="link-primary text-decoration-none">terms and conditions</a>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button class="text-lg transition duration-500 ease-in-out inline-block hover:border border-green-500 rounded-full py-2 px-4 bg-green-500 hover:bg-green-700 text-white p-4 w-100" type="submit">S'inscrirer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="mb-0 mt-5 text-secondary text-center">Si vous avez le compte? <a href="{% url 'connecte' %}" class="link-primary text-decoration-none" style="font-size: 20px;">Connectez-vous</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <div style="margin-bottom: 50px;"></div>
+{% endblock content %}

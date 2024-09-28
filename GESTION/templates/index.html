@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="cardBox">
+  <a href="{% url 'formations' %}">
+  <div class="card d-flex flex-row">
+    <div>
+      <div class="numbers">{{form}}</div>
+      <div class="cardName">Formations</div>
+    </div>
+
+    <div class="iconBx">
+      <i class="fas fa-graduation-cap"></i>
+    </div>
+  </div>
+</a>
+<a href="{% url 'clients' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(191, 221, 221);">
+    <div>
+      <div class="numbers">{{clie}}</div>
+      <div class="cardName">Clients</div>
+    </div>
+
+    <div class="iconBx">
+      <i class="fas fa-user-friends"></i>
+    </div>
+  </div>
+</a>
+<a href="{% url 'employes' %}">
+  <div class="card d-flex flex-row" style="background-color: rgb(116, 227, 227);">
+    <div>
+      <div class="numbers">{{empl}}</div>
+      <div class="cardName">Employes</div>
+    </div>
+
+    <div class="iconBx">
+      <i class="fas fa-user-tie"></i>
+    </div>
+  </div>
+</a>
+<a href="{% url 'stagiaires' %}">
+  <div class="card d-flex flex-row" style="background-color: aqua;">
+    <div>
+      <div class="numbers">{{stag}}</div>
+      <div class="cardName">Stagiaires</div>
+    </div>
+
+    <div class="iconBx">
+      <i class="fas fa-user-graduate"></i>
+    </div>
+  </div>
+  </a>
+</div>
+
+
+<div class="container">
+  <!-- ================ Order Details List ================= -->
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>Les demandes des clients</h2>
+        <a href="{% url 'demandecl' %}" class="btn">Voir Plus</a>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>Nom</td>
+            <td class="text-center">Prenom</td>
+            <td class="text-center">Email</td>
+            <td class="text-center">Rendez-Vous</td>
+          </tr>
+        </thead>
+        {% if de %}
+
+        {% for clients in de %}
+        <tbody>
+          <tr>
+            <td>{{clients.nom}}</td>
+            <td class="text-center">{{clients.prenom}}</td>
+            <td>{{clients.email}}</td>
+              <td class="text-center">
+                {{clients.audience}}
+              </td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% endif %}
+      </table>
+    </div>
+    <!-- ================= New Customers ================ -->
+    <div class="recentCustomers" style="color: black;">
+      <div class="cardHeader">
+        <h2>Les Clients</h2>
+        <a href="{% url 'clients' %}" class="btn">Voir Plus</a>
+      </div>
+
+      <table class="table">
+             {% if client %}
+
+           {% for clients in client %}
+        <tr>
+          <td width="60px">
+            <div class="imgBx"><img src="{{clients.photo_profil.url}}" alt=""></div>
+          </td>
+          <td>
+            <h4>{{clients.nom}} <br> <span>{{clients.prenom}}</span></h4>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+      </table>
+    </div>
+  </div>
+</div>
+
+  {% endblock content %}

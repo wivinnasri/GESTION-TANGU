@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="containerd">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Salaires des employes</h2>
+           <a href="{% url 'salaire' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+          <div class="search">
+            <form action="" class="d-flex flex-row">
+            <label>
+                <input type="text" name="item_name" placeholder="Rechercher Ici" style="color: #000;">
+                <button type="submit">
+                    <i class="fas fa-search" style="color: black;"></i>
+                </button>
+            </label>
+        </form>
+        </div>
+          
+        </div>
+        <form action="{% url 'sajouter' %}" method="post" class="items-center justify-center content-center">
+            {% csrf_token %}
+            <h1 class="text-black text-lg" style="text-transform: capitalize;font-weight: bold;">Ajouter un Salaire d'un Employe</h1>
+            <div class="d-flex gap-4 mt-8">
+            <div class="col-md-4">
+         
+                    <input type="text" name="employe" list="categorielist"  placeholder="Sélectionner Un Employe" class="form-control">
+                    {% for categorie in employes %}
+                    <datalist id="categorielist">
+                    <option value="{{categorie.id}}">{{categorie.nom}}{{categorie.prenom}}</option>
+                    
+                    {% endfor %}
+                    </datalist>
+                  
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" name="salaire" placeholder="0FBU">
+            </div>
+            </div>
+        <button type="submit" class="btn btn-primary d-flex items-center" style="background-color: blue;"><i class="fas fa-plus" style="color: #fff;"></i>Ajouter</button>
+        </form>
+        <table style="width: 85vw;" class="table table-bordered">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td class="text-center">Nom</td>
+              <td>Prenom</td>
+              <td>Salaire</td>
+              <td class="text-start">Action</td>
+              
+            </tr>
+          </thead>
+          {% if employes %}
+
+          {% for employe in employes %}
+          
+          <tbody>
+            <tr>
+              <td>{{employe.id}}</td>
+              <td class="text-center">{{employe.nom}}</td>
+              <td>{{employe.prenom}}</td>
+              
+              <td>
+                
+                {% for salaire in salaires %}
+                {% if salaire.id_employe == employe %}
+                {{ salaire.salaire }}
+                {% endif %}
+                {% endfor %}
+            </td>
+              
+              <td style="display: flex;gap:0.2rem;">
+                
+                {% for salaire in salaires %}
+                {% if salaire.id_employe == employe %}
+              
+                <a href="{% url 'se' employe.id %}" class="btn btn-warning d-flex items-center" style="gap:0.2rem;"><i class="far fa-edit" style="color: black;"></i> Editer</a>
+                <a href="{% url 'sd' employe.id %}" class="btn btn-danger d-flex items-center" style="gap:0.2rem;"><i class="fas fa-trash-alt" style="color: white;"></i> Rétirer</a>
+             
+                {% endif %}
+                {% endfor %}
+               
+              </td>
+              
+            
+            </tr>
+                     {% endfor %}
+                     
+
+         {% else %}
+              <tr><td class="text-center" colspan="7"><p class="text-center" style="color: red;font-size: 15px;"><i class="fas fa-thermometer-empty"></i> Pas des enregistrements</p><td></tr>
+          {% endif %}
+          </tbody>
+         
+        </table>
+        <hr style="color: black;margin-bottom: 10px;">
+        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if employes.has_previous %}
+              <li class="page-item">
+                
+                <a class="page-link" href="?page={{employes.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                
+              </li>
+              {% endif %}
+              <li class="page-item active"><a class="page-link" href="?page={{employes.number}}">{{employes.number}}</a></li>
+              {% if formation.has_next %}
+              <li class="page-item">
+                
+                <a class="page-link"href="?page={{employes.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+               
+              </li>
+               {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

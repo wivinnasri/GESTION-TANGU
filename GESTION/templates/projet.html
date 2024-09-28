@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <!-- ================ Order Details List ================= -->
+    <div class="details">
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Projets</h2>
+          <a href="{% url 'projet' %}" class="btn">Actualiser la page <i class="fas fa-undo"></i></a>
+          <a href="{% url 'archivres' %}" class="btn"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+        </div>
+        {% if messages %}
+          <ul class="messages text-center pb-2" style="color: red;">
+              {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><i class="fas fa-times-circle"></i> {{ message }} <i>&#127881</i></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+        <hr style="color: black;margin-top: 20px;margin-bottom: 10px;">
+         <div style="width: 85vw;color: black;">
+            <form class="col g-3" method="post" action="{% url 'projetadd' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="col-md-4">
+                  <label for="validationDefault01" class="form-label">Nom du projet</label>
+                  <input type="text" class="form-control" name="nom" id="validationDefault01" value="" placeholder="ex.Gestion de TANGU" required>
+                </div>
+                      <div class="col-md-4 mt-3">
+                  <label for="validationDefault02" class="form-label">Description</label>
+                  <textarea class="form-control" name="description" id="validationDefault02" rows="3" value="" placeholder="ex.Mark" required></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-outline-primary" style="color: white;background-color: #0d6efd;" type="submit">Enregistrer</button>
+                </div>
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
